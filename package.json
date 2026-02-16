@@ -54,6 +54,8 @@
       "assets/icon.png",
       "assets/icon-256.png",
       "assets/tray.png",
+      "assets/trayTemplate.png",
+      "assets/trayTemplate@2x.png",
       "serve.js",
       "electron/**",
       "package.json"

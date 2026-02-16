@@ -375,7 +375,9 @@ app.whenReady().then(async () => {
   
   // Tray for recovery if window is hidden
   try {
-    const iconPath = path.join(__dirname, '..', 'assets', 'tray.png');
+    // macOS "Template" images adapt to menu bar theme automatically
+    const trayIconName = process.platform === 'darwin' ? 'trayTemplate.png' : 'tray.png';
+    const iconPath = path.join(__dirname, '..', 'assets', trayIconName);
     if (fs.existsSync(iconPath)) {
       tray = new Tray(iconPath);
       const menu = Menu.buildFromTemplate([
