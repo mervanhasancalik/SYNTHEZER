@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+  <!-- Synthezer tray icon: simplified geometric logo (center square with nested squares) -->
+  <!-- Outer square -->
+  <rect x="14" y="14" width="100" height="100" fill="#fff"/>
+  <!-- Inner cutout -->
+  <rect x="30" y="30" width="68" height="68" fill="#000"/>
+  <!-- Center dot -->
+  <rect x="48" y="48" width="32" height="32" fill="#fff"/>
+</svg>

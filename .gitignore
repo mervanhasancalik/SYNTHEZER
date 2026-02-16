@@ -1,0 +1,68 @@
+# Dependencies
+node_modules/
+
+# Database files (user data stays local)
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Build output
+dist/
+out/
+release/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Log files
+*.log
+*.err
+serve-dev.*
+
+# OS artifacts
+nul
+Thumbs.db
+Desktop.ini
+ehthumbs.db
+.DS_Store
+._*
+
+# Editor artifacts and backups
+*.backup-*
+*.bak
+*.swp
+*.tmp
+*.temp
+.vscode/
+.idea/
+
+# Personal/development artifacts
+*.pdf
+
+# Internal development files
+PUBLISH-CHECKLIST.md
+QA-REPORT*.md
+LOADING-ANIMATIONS.md
+chips-editable*.txt
+qa-reports/
+
+# Marketing/preview internals
+previews/
+scripts/capture-marketing.cjs
+scripts/extract-asar.cjs
+assets/marketing/raw/
+
+# Test output
+test-results/
+
+# Cloudflare local state
+.wrangler/
+
+# Batch files with personal paths
+launch-synthezer.bat
+
+# Claude Code local settings/memory
+.claude/

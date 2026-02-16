@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 5000 531" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <g>
+        <!-- Box 1 (outer) -->
+        <rect x="41.899" y="41.899" width="446.928" height="446.928" style="fill:#000;"/>
+        <!-- Box 1 (inner hollow) -->
+        <rect x="125.698" y="125.698" width="279.33" height="279.33" style="fill:#fff;"/>
+        
+        <!-- Connector 1 -->
+        <rect x="488.827" y="223.464" width="670.391" height="83.799" style="fill:#000;"/>
+        
+        <!-- Box 2 (outer) -->
+        <rect x="1159.218" y="41.899" width="446.928" height="446.928" style="fill:#000;"/>
+        <!-- Box 2 (inner hollow) -->
+        <rect x="1243.017" y="125.698" width="279.33" height="279.33" style="fill:#fff;"/>
+        
+        <!-- Connector 2 -->
+        <rect x="1606.145" y="223.464" width="670.391" height="83.799" style="fill:#000;"/>
+        
+        <!-- Box 3 (solid center) -->
+        <rect x="2276.536" y="41.899" width="446.928" height="446.928" style="fill:#000;"/>
+        
+        <!-- Connector 3 -->
+        <rect x="2723.464" y="223.464" width="670.391" height="83.799" style="fill:#000;"/>
+        
+        <!-- Box 4 (outer) -->
+        <rect x="3393.855" y="41.899" width="446.928" height="446.928" style="fill:#000;"/>
+        <!-- Box 4 (inner hollow) -->
+        <rect x="3477.654" y="125.698" width="279.33" height="279.33" style="fill:#fff;"/>
+        
+        <!-- Connector 4 -->
+        <rect x="3840.782" y="223.464" width="670.391" height="83.799" style="fill:#000;"/>
+        
+        <!-- Box 5 (outer) -->
+        <rect x="4511.173" y="41.899" width="446.928" height="446.928" style="fill:#000;"/>
+        <!-- Box 5 (inner hollow) -->
+        <rect x="4594.972" y="125.698" width="279.33" height="279.33" style="fill:#fff;"/>
+    </g>
+</svg>

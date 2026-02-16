@@ -1,0 +1,75 @@
+{
+  "name": "synthezer",
+  "version": "3.0.0",
+  "private": true,
+  "description": "Local-first AI prompt pipeline application",
+  "type": "module",
+  "main": "electron/main.cjs",
+  "scripts": {
+    "start": "npm run desktop",
+    "dev": "node --watch serve.js",
+    "desktop": "electron electron/main.cjs",
+    "server": "node serve.js",
+    "dist": "electron-builder",
+    "capture:marketing": "electron scripts/capture-marketing.cjs",
+    "test": "node --test test/*.test.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.0.0",
+    "express": "^5.0.0",
+    "express-rate-limit": "^8.2.1",
+    "plist": "^3.1.0",
+    "ws": "^8.19.0"
+  },
+  "devDependencies": {
+    "electron": "^32.0.0",
+    "electron-builder": "^26.0.0",
+    "playwright": "^1.58.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "author": "Mervan Hasan Calik",
+  "license": "MIT",
+  "keywords": [
+    "ai",
+    "prompt-engineering",
+    "pipeline",
+    "local-first",
+    "electron",
+    "desktop-app"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mervanhasancalik/synthezer"
+  },
+  "build": {
+    "appId": "com.synthezer.app",
+    "productName": "Synthezer",
+    "files": [
+      "frontend/**",
+      "routes/**",
+      "lib/**",
+      "db/**",
+      "assets/icon.png",
+      "assets/icon-256.png",
+      "assets/tray.png",
+      "serve.js",
+      "electron/**",
+      "package.json"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "assets/icon.icns"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  }
+}

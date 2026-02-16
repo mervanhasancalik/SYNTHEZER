@@ -1,0 +1,5 @@
+# Prevent GitHub from classifying the repo as an HTML project
+synthezerWebsite/* linguist-documentation
+previews/* linguist-documentation
+assets/* linguist-vendored
+*.svg linguist-vendored
