@@ -13,7 +13,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-black?style=flat-square)](LICENSE)
 [![Node.js](https://img.shields.io/badge/Node.js-≥18-black?style=flat-square)](https://nodejs.org)
 [![Dependencies](https://img.shields.io/badge/Deps-5-black?style=flat-square)](#stack)
-[![CI](https://github.com/mervanhasancalik/synthezer/actions/workflows/ci.yml/badge.svg)](https://github.com/mervanhasancalik/synthezer/actions)
 
 ---
 
