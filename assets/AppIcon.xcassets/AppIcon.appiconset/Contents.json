@@ -1,0 +1,68 @@
+{
+  "images": [
+    {
+      "filename": "icon-mac-any-512.png",
+      "idiom": "mac",
+      "scale": "1x",
+      "size": "512x512"
+    },
+    {
+      "filename": "icon-mac-any-1024.png",
+      "idiom": "mac",
+      "scale": "2x",
+      "size": "512x512"
+    },
+    {
+      "appearances": [
+        {
+          "appearance": "luminosity",
+          "value": "dark"
+        }
+      ],
+      "filename": "icon-mac-dark-512.png",
+      "idiom": "mac",
+      "scale": "1x",
+      "size": "512x512"
+    },
+    {
+      "appearances": [
+        {
+          "appearance": "luminosity",
+          "value": "dark"
+        }
+      ],
+      "filename": "icon-mac-dark-1024.png",
+      "idiom": "mac",
+      "scale": "2x",
+      "size": "512x512"
+    },
+    {
+      "appearances": [
+        {
+          "appearance": "luminosity",
+          "value": "tinted"
+        }
+      ],
+      "filename": "icon-mac-tinted-512.png",
+      "idiom": "mac",
+      "scale": "1x",
+      "size": "512x512"
+    },
+    {
+      "appearances": [
+        {
+          "appearance": "luminosity",
+          "value": "tinted"
+        }
+      ],
+      "filename": "icon-mac-tinted-1024.png",
+      "idiom": "mac",
+      "scale": "2x",
+      "size": "512x512"
+    }
+  ],
+  "info": {
+    "author": "synthezer",
+    "version": 1
+  }
+}

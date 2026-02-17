@@ -232,28 +232,9 @@
             -webkit-box-orient: vertical;
             overflow: hidden;
         }
-        #electron-titlebar { -webkit-app-region: drag; }
-        #electron-titlebar .titlebar-buttons { -webkit-app-region: no-drag; }
     </style>
 </head>
 <body class="bg-background-black text-white font-display selection:bg-white selection:text-black flex flex-col h-screen overflow-hidden">
-<!-- CUSTOM TITLE BAR (Electron only) -->
-<div id="electron-titlebar" class="hidden shrink-0 h-8 bg-[#0a0a0a] border-b border-[#1a1a1a] flex items-center select-none">
-<div class="flex items-center gap-2 px-3 flex-1">
-<span class="text-[9px] font-bold text-gray-500 uppercase tracking-[0.2em]">Synthezer</span>
-</div>
-<div class="titlebar-buttons flex items-center h-full">
-<button id="titlebar-minimize" class="h-full w-11 flex items-center justify-center text-gray-500 hover:text-white hover:bg-[#1a1a1a] transition-colors" aria-label="Minimize">
-<svg width="10" height="1" viewBox="0 0 10 1"><rect width="10" height="1" fill="currentColor"/></svg>
-</button>
-<button id="titlebar-maximize" class="h-full w-11 flex items-center justify-center text-gray-500 hover:text-white hover:bg-[#1a1a1a] transition-colors" aria-label="Maximize">
-<svg width="10" height="10" viewBox="0 0 10 10" fill="none"><rect x="0.5" y="0.5" width="9" height="9" stroke="currentColor" stroke-width="1"/></svg>
-</button>
-<button id="titlebar-close" class="h-full w-11 flex items-center justify-center text-gray-500 hover:text-white hover:bg-red-600 transition-colors" aria-label="Close">
-<svg width="10" height="10" viewBox="0 0 10 10"><line x1="0" y1="0" x2="10" y2="10" stroke="currentColor" stroke-width="1.2"/><line x1="10" y1="0" x2="0" y2="10" stroke="currentColor" stroke-width="1.2"/></svg>
-</button>
-</div>
-</div>
 <!-- Pipeline Context Menu (right-click) -->
 <div id="pipeline-context-menu" class="fixed z-[60] bg-[#0a0a0a] border border-[#1a1a1a] hidden" style="min-width:160px; box-shadow: 0 4px 24px rgba(0,0,0,0.8);">
 <button class="ctx-action w-full text-left px-4 py-2.5 text-[10px] font-bold text-white uppercase tracking-widest hover:bg-white hover:text-black transition-all flex items-center gap-3" data-action="open">
@@ -2212,13 +2193,7 @@ SYNTHEZER_PIPELINE_ENGINE_V2_STABLE
 // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
 // â"€â"€ VIEW SWITCHING â"€â"€
 // â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-// -- CUSTOM TITLE BAR (Electron) --
-if (window.electronAPI) {
-  document.getElementById('electron-titlebar')?.classList.remove('hidden');
-  document.getElementById('titlebar-minimize')?.addEventListener('click', () => window.electronAPI.minimize());
-  document.getElementById('titlebar-maximize')?.addEventListener('click', () => window.electronAPI.maximize());
-  document.getElementById('titlebar-close')?.addEventListener('click', () => window.electronAPI.close());
-}
+
 
 const views = { dashboard: document.getElementById('view-dashboard'), active: document.getElementById('view-active'), chips: document.getElementById('view-chips'), ai: document.getElementById('view-ai'), optimize: document.getElementById('view-optimize') };
 const navLinks = document.querySelectorAll('.nav-link');

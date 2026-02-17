@@ -12,7 +12,8 @@
     "server": "node serve.js",
     "dist": "electron-builder",
     "capture:marketing": "electron scripts/capture-marketing.cjs",
-    "test": "node --test test/*.test.js"
+    "test": "node --test test/*.test.js",
+    "generate-icons": "bash scripts/generate-icons.sh"
   },
   "dependencies": {
     "better-sqlite3": "^11.0.0",
@@ -53,6 +54,12 @@
       "db/**",
       "assets/icon.png",
       "assets/icon-256.png",
+      "assets/icon-default.png",
+      "assets/icon-dark.png",
+      "assets/icon-clear-light.png",
+      "assets/icon-clear-dark.png",
+      "assets/icon-tinted-light.png",
+      "assets/icon-tinted-dark.png",
       "assets/tray.png",
       "assets/trayTemplate.png",
       "assets/trayTemplate@2x.png",
@@ -68,8 +75,10 @@
     },
     "mac": {
       "target": "dmg",
-      "icon": "assets/icon.icns"
+      "icon": "assets/icon.icns",
+      "darkModeSupport": true
     },
+    "afterPack": "scripts/afterPack.cjs",
     "linux": {
       "target": "AppImage"
     }

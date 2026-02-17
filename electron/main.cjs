@@ -1,4 +1,4 @@
-const { app, BrowserWindow, Tray, Menu, shell, ipcMain } = require('electron');
+const { app, BrowserWindow, Tray, Menu, shell, nativeTheme, nativeImage } = require('electron');
 const { spawn } = require('child_process');
 const fs = require('fs');
 const path = require('path');
@@ -8,6 +8,19 @@ const net = require('net');
 let mainWindow = null;
 let tray = null;
 let serverProcess = null;
+
+/**
+ * Resolve the macOS dock/window icon based on current system theme.
+ * Uses icon variants: Default (any), Dark (dark mode), ClearLight/ClearDark.
+ */
+function resolveAppIcon() {
+  const assetsDir = path.join(__dirname, '..', 'assets');
+  const isDark = nativeTheme.shouldUseDarkColors;
+  const iconName = isDark ? 'icon-dark.png' : 'icon-default.png';
+  const iconPath = path.join(assetsDir, iconName);
+  if (fs.existsSync(iconPath)) return iconPath;
+  return path.join(assetsDir, 'icon.png');
+}
 
 /**
  * Find the system Node.js binary (not Electron's embedded one).
@@ -213,9 +226,8 @@ function createWindow() {
     minWidth: 1100,
     minHeight: 720,
     backgroundColor: '#000000',
-    icon: path.join(__dirname, '..', 'assets', 'icon.png'),
+    icon: resolveAppIcon(),
     show: false,
-    frame: false,
     autoHideMenuBar: true,
     center: true,
     skipTaskbar: false,
@@ -288,24 +300,22 @@ if (!gotLock) {
   });
 }
 
-// Window control IPC handlers
-ipcMain.on('window-minimize', () => mainWindow?.minimize());
-ipcMain.on('window-maximize', () => {
-  if (mainWindow?.isMaximized()) mainWindow.unmaximize();
-  else mainWindow?.maximize();
-});
-ipcMain.on('window-close', () => mainWindow?.close());
 
 app.whenReady().then(async () => {
   app.setAppUserModelId('com.synthezer.app');
+  app.setName('Synthezer');
 
   // Set dock icon on macOS (required in dev mode since there's no .app bundle)
+  // In production, the Asset Catalog handles dark/tinted appearances automatically
   if (process.platform === 'darwin' && app.dock) {
-    const dockIcon = path.join(__dirname, '..', 'assets', 'icon.png');
-    if (fs.existsSync(dockIcon)) {
-      const { nativeImage } = require('electron');
-      app.dock.setIcon(nativeImage.createFromPath(dockIcon));
-    }
+    const setDockIcon = () => {
+      const iconPath = resolveAppIcon();
+      if (fs.existsSync(iconPath)) {
+        app.dock.setIcon(nativeImage.createFromPath(iconPath));
+      }
+    };
+    setDockIcon();
+    nativeTheme.on('updated', setDockIcon);
   }
 
   log('App ready');
